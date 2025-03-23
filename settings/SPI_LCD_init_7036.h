@@ -1,4 +1,4 @@
-// SPI_LCD ライブラリ用設定ファイル
+// SPI_LCD ライブラリ用設定ファイル(EA DOGM163)
 #ifndef SPI_LCD_init_h
 #define SPI_LCD_init_h
 

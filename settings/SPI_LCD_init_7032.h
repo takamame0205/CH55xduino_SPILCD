@@ -1,4 +1,4 @@
-// SPI_LCD ライブラリ用設定ファイル(規定値)
+// SPI_LCD ライブラリ用設定ファイル(COG1602A)
 #ifndef SPI_LCD_init_h
 #define SPI_LCD_init_h
 
