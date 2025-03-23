@@ -9,10 +9,10 @@ void LCD_begin() {
   // 初期設定
 
   // IO初期化
-  pinMode(RS_PIN, OUTPUT);
-  pinMode(RST_PIN, OUTPUT);
-  digitalWrite(RS_PIN, LOW);
-  digitalWrite(RST_PIN, HIGH);
+  pinMode(LCD_RS_PIN, OUTPUT);
+  pinMode(LCD_RST_PIN, OUTPUT);
+  digitalWrite(LCD_RS_PIN, LOW);
+  digitalWrite(LCD_RST_PIN, HIGH);
   #ifdef CS_PIN
     pinMode(CS_PIN, OUTPUT);
     digitalWrite(CS_PIN, HIGH);
@@ -22,9 +22,9 @@ void LCD_begin() {
 
   // リセット
   delayMicroseconds(LCD_RSTPW);
-  digitalWrite(RST_PIN, LOW);
+  digitalWrite(LCD_RST_PIN, LOW);
   delayMicroseconds(LCD_RSTPW);
-  digitalWrite(RST_PIN, HIGH);
+  digitalWrite(LCD_RST_PIN, HIGH);
   delay(LCD_PWDLY);
   
   // LCDC別初期化コマンド実行
@@ -84,7 +84,7 @@ uint8_t LCD_write(uint8_t data){
   // 1文字表示(＝RAMデータ書き込み)
   //  data=書き込むデータ
   //  戻り値：書き込んだバイト数(常に1)
-  digitalWrite(RS_PIN, HIGH);
+  digitalWrite(LCD_RS_PIN, HIGH);
   SPI_transfer(data);
   delayMicroseconds(LCD_WAIT);
   return 1;
@@ -155,7 +155,7 @@ void LCD_noCursor() {
 void LCD_sendCmd(uint8_t cmd){
   // コマンド送信
   //  data=送信するコマンド
-  digitalWrite(RS_PIN, LOW);
+  digitalWrite(LCD_RS_PIN, LOW);
   SPI_transfer(cmd);
   delayMicroseconds(LCD_WAIT);
 }
