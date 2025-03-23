@@ -41,3 +41,4 @@ EA DOGM163 (ST7036) : 5V, Booster OFF, Contrast 25, Rab 4 (Use SPI_LCD_init_7036
 # Test Circuit
 <img src="./images/CH552G.PNG" alt="Cheme">
 <img src="./images/COG1602A.jpg" alt="Board">
+<img src="./images/EADOGM163.jpg" alt="Board">
