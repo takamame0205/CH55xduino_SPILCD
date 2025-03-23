@@ -5,15 +5,15 @@ Most functions are similar to the "LiquidCrysatal" library.
 Create a new folder(e.g. "SPI_LCD_CH55x"), and place SPI_LCD.c, SPI_LCD.h, SPI_LCD_init.h, SPI_LCD_init_d.h into the folder.
 Edit SPI_LCD_init.h for initial settings.
 # Symbolic constants defined in SPI_LCD_init.h
-LCD_USEPRINT : Define this if you want to use LCD_Print(), LCD_Printi(), LCD_Printb() functions. It requires about 1.3KB of memories.
-LCD_RS_PIN : GPIO number for R/S signal.
-LCD_RST_PIN : GPIO number for LCD reset signal.
-LCD_DIGITS : Display digits of LCD.
-LCD_LINES : Display lines of LCD.
-LCD_CONT : Display contrast. (0-63, see datasheeta of ST7032 and ST7036) 
-LCD_RAB : Follower gain of LCD controller (0-7, see datasheeta of ST7032 and ST7036)
-LCD_7032 : Define this when the LCD uses ST7032 for the controller.
-LCD_7036 : Define this when the LCD uses ST7032 for the controller.
+LCD_USEPRINT : Define this if you want to use LCD_Print(), LCD_Printi(), LCD_Printb() functions. It requires about 1.3KB of memories.<BR>
+LCD_RS_PIN : GPIO number for R/S signal.<BR>
+LCD_RST_PIN : GPIO number for LCD reset signal.<BR>
+LCD_DIGITS : Display digits of LCD.<BR>
+LCD_LINES : Display lines of LCD.<BR>
+LCD_CONT : Display contrast. (0-63, see datasheeta of ST7032 and ST7036) <BR>
+LCD_RAB : Follower gain of LCD controller (0-7, see datasheeta of ST7032 and ST7036)<BR>
+LCD_7032 : Define this when the LCD uses ST7032 for the controller.<BR>
+LCD_7036 : Define this when the LCD uses ST7032 for the controller.<BR>
 The default values are defined in SPI_LCD_init_d.h file.
 # Reference of functions
 1. void LCD_begin() : Initializes the LCD.
