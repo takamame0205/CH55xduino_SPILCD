@@ -36,4 +36,5 @@ All functions return the number of bytes written.
 3. uint8_t print(data) : Prints a numbner(integer only) or a string.
 4. uint8_t print(data, base) : Prints a nunber(integer only) in the specified base.
 # Tested LCD modules
-COG1602A (ST7032) : 5V, Booster ON, Contrast 25, Rab 4 (Default SPI_LCD_init_d.h)
+COG1602A (ST7032) : 5V, Booster ON, Contrast 25, Rab 4 (Use default SPI_LCD_init_d.h)
+EA DOGM163 (ST7036) : 5V, Booster ON, Contrast 25, Rab 4 (Use SPI_LCD_init_7036.h)
