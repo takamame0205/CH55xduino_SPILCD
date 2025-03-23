@@ -1,2 +1,2 @@
 Contents of this folder:
-1. CH552G.PNG : Cheme of development board.
+1. CH552G.PNG : Circuit diagram of development board.
