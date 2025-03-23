@@ -33,8 +33,8 @@ The default values are defined in SPI_LCD_init_d.h file.
 All functions return the number of bytes written.
 1. uint8_t LCD_printb(data, base) : Prints a nunber(integer only) in the specified base.
 2. uint8_t LCD_printi(data) : Prints a numbner(integer only).
-3. uint8_t print(data) : Prints a numbner(integer only) or a string.
-4. uint8_t print(data, base) : Prints a nunber(integer only) in the specified base.
+3. uint8_t LCD_print(data) : Prints a numbner(integer only) or a string.
+4. uint8_t LCD_print(data, base) : Prints a nunber(integer only) in the specified base.
 # Tested LCD modules
 COG1602A (ST7032) : 5V, Booster ON, Contrast 25, Rab 4 (Use default SPI_LCD_init_d.h)<BR>
 EA DOGM163 (ST7036) : 5V, Booster OFF, Contrast 25, Rab 4 (Use SPI_LCD_init_7036.h)
