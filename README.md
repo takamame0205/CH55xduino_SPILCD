@@ -35,3 +35,5 @@ All functions return the number of bytes written.
 2. uint8_t LCD_printi(data) : Prints a numbner(integer only).
 3. uint8_t print(data) : Prints a numbner(integer only) or a string.
 4. uint8_t print(data, base) : Prints a nunber(integer only) in the specified base.
+# Tested LCD modules
+COG1602A (ST7032) : 5V, Booster ON, COntrast 25,Rab 4
