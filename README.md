@@ -2,7 +2,7 @@
 SPI LCD Library for CH55xduino (Supports ST7032/ST7036).<BR>
 Most functions are similar to the "LiquidCrysatal" library.
 # How to install
-Create a new folder(e.g. "SPI_LCD_CH55x"), and place SPI_LCD.c, SPI_LCD.h, SPI_LCD_init.h, SPI_LCD_init_d.h into the folder.<BR>
+Create a new folder(e.g. "SPI_LCD_CH55x") in the library folder of Arduino IDE, and place SPI_LCD.c, SPI_LCD.h, SPI_LCD_init.h, SPI_LCD_init_d.h into the folder.<BR>
 Edit SPI_LCD_init.h for initial settings.<BR>
 Include <SPI_LCD.h> to use this library.
 # Symbolic constants defined in SPI_LCD_init.h
