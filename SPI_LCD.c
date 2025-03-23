@@ -13,10 +13,6 @@ void LCD_begin() {
   pinMode(LCD_RST_PIN, OUTPUT);
   digitalWrite(LCD_RS_PIN, LOW);
   digitalWrite(LCD_RST_PIN, HIGH);
-  #ifdef CS_PIN
-    pinMode(CS_PIN, OUTPUT);
-    digitalWrite(CS_PIN, HIGH);
-  #endif  
   SPI_begin();
   SPI_beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE3));
 
