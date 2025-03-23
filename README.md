@@ -10,8 +10,8 @@ LCD_RS_PIN : GPIO number for R/S signal.<BR>
 LCD_RST_PIN : GPIO number for LCD reset signal.<BR>
 LCD_DIGITS : Display digits of LCD.<BR>
 LCD_LINES : Display lines of LCD.<BR>
-LCD_CONT : Display contrast. (0-63, see datasheeta of ST7032 and ST7036) <BR>
-LCD_RAB : Follower gain of LCD controller (0-7, see datasheeta of ST7032 and ST7036)<BR>
+LCD_CONT : Display contrast. (0-63, see datasheets of ST7032 and ST7036) <BR>
+LCD_RAB : Follower gain of LCD controller (0-7, see datasheets of ST7032 and ST7036)<BR>
 LCD_7032 : Define this when the LCD uses ST7032 for the controller.<BR>
 LCD_7036 : Define this when the LCD uses ST7032 for the controller.<BR>
 The default values are defined in SPI_LCD_init_d.h file.
