@@ -14,8 +14,8 @@ LCD_DIGITS : Display digits of LCD.<BR>
 LCD_LINES : Display lines of LCD.<BR>
 LCD_CONT : Display contrast. (0-63, see datasheets of ST7032 and ST7036) <BR>
 LCD_RAB : Follower gain of LCD controller (0-7, see datasheets of ST7032 and ST7036)<BR>
-LCD_7032 : Define this when the LCD uses ST7032 for the controller.<BR>
-LCD_7036 : Define this when the LCD uses ST7036 for the controller.<BR>
+LCD_7032 : Define this when the LCD uses ST7032 as the controller.<BR>
+LCD_7036 : Define this when the LCD uses ST7036 as the controller.<BR>
 The default values are defined in SPI_LCD_init_d.h file.
 # Reference of functions
 1. void LCD_begin() : Initializes the LCD.
