@@ -83,7 +83,7 @@ uint8_t __LCD_calcDdramAddr(uint8_t x, uint8_t y);
 #define __LCD_onOff() (LCD_sendCmd(LCD_flag | 0b00001000))                  // 表示ON/OFF
 #define __LCD_em() (LCD_sendCmd(0b00000110))                                // エントリーモードセット
 #define __LCD_setDdramAddr(address) (LCD_sendCmd(0x80 | (address & 0x7f)))  // DDRAMアドレス指定
-#define __LCD_setCgramAddr(address) (LCD_sendCmd(0x40 | (address & 0x3ff))) // CGRAMアドレス指定
+#define __LCD_setCgramAddr(address) (LCD_sendCmd(0x40 | (address & 0x3f))) // CGRAMアドレス指定
 #if LCD_LINES==1
 #define __LCD_fs(data) (LCD_sendCmd(0b00110000 | (LCD_DH << 2) | data))     // ファンクションセット
 #else
