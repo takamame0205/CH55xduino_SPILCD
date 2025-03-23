@@ -7,7 +7,7 @@ Edit SPI_LCD_init.h for initial settings.<BR>
 Include <SPI_LCD.h> to use this library.
 # Symbolic constants defined in SPI_LCD_init.h
 LCD_USEPRINT : Define this if you want to use LCD_Print(), LCD_Printi(), LCD_Printb() functions. <BR>
-　It requires about 1.3KB of memories.<BR>
+　It requires about 1.3KB of additional program memories.<BR>
 LCD_RS_PIN : GPIO number for R/S signal.<BR>
 LCD_RST_PIN : GPIO number for LCD reset signal.<BR>
 LCD_DIGITS : Display digits of LCD.<BR>
