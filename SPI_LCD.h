@@ -93,7 +93,7 @@ uint8_t __LCD_calcDdramAddr(uint8_t x, uint8_t y);
 //  LCD_print(char) →　文字コードcharの文字を1文字表示
 //  LCD_print(int/short/long) →　符号付整数値を表示
 //  LCD_print(符号なし整数型) →　整数値を表示(longは符号付に変換される)
-//  LCD_print(整数型, ) → 符号なし整数値を基数baseで表示
+//  LCD_print(整数型, base) → 符号なし整数値を基数baseで表示
 #ifdef LCD_USEPRINT
 uint8_t LCD_printb(uint32_t data, uint8_t base);
 uint8_t LCD_printi(long data);
