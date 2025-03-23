@@ -1,12 +1,13 @@
-// SPI_LCD ライブラリ用設定ファイル(規定値)
+// SPI_LCD ライブラリ用設定ファイル(規定値:COG1602A想定)
 #ifndef SPI_LCD_init_h
 #define SPI_LCD_init_h
 
 // LCD_Printサポート(有効化するとプログラムメモリ使用量が約1.3KB増加する)
 #define LCD_USEPRINT    // LCD_Print(), LCD_Printi(), LCD_Printb()を使用するときに定義
-// ピン番号指定(SS/CSは未使用)
+// ピン番号指定(SS/CSはオプション)
 #define LCD_RS_PIN 14       // RS信号
 #define LCD_RST_PIN 34      // RESET信号
+// #define LCD_SS_PIN 34       // SS(LATCH)信号
 // LCD桁数/行数/表示設定
 #define LCD_DIGITS 16   // 16桁
 #define LCD_LINES 2     // 2行
