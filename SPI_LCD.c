@@ -1,4 +1,4 @@
-// SPI_LCD ライブラリ version 0.10
+// SPI_LCD ライブラリ version 0.20
 //    2025.3.23 Programmed by Kyoro
 #include <SPI_LCD.h>
 
@@ -10,20 +10,31 @@ void LCD_begin() {
 
   // IO初期化
   pinMode(LCD_RS_PIN, OUTPUT);
-  pinMode(LCD_RST_PIN, OUTPUT);
   digitalWrite(LCD_RS_PIN, LOW);
-  digitalWrite(LCD_RST_PIN, HIGH);
+  #ifdef LCD_RST_PIN
+    pinMode(LCD_RST_PIN, OUTPUT);
+    digitalWrite(LCD_RST_PIN, HIGH);
+  #endif
+  #ifdef LCD_SS_PIN
+    pinMode(LCD_SS_PIN, OUTPUT);
+    digitalWrite(LCD_SS_PIN, HIGH);
+  #endif
   SPI_begin();
   SPI_beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE3));
 
   // リセット
-  delayMicroseconds(LCD_RSTPW);
-  digitalWrite(LCD_RST_PIN, LOW);
-  delayMicroseconds(LCD_RSTPW);
-  digitalWrite(LCD_RST_PIN, HIGH);
+  #ifdef LCD_RST_PIN
+    delayMicroseconds(LCD_RSTPW);
+    digitalWrite(LCD_RST_PIN, LOW);
+    delayMicroseconds(LCD_RSTPW);
+    digitalWrite(LCD_RST_PIN, HIGH);
+  #endif
   delay(LCD_PWDLY);
   
   // LCDC別初期化コマンド実行
+  __LCD_fs(0);    // HC595経由でパラレルLCDを接続する場合の8bitバス指定
+  delay(LCD_FSWAIT);
+  __LCD_fs(0);
   __LCD_fs(0);
   #ifdef __LCD_INIT
   uint8_t cmd[]=__LCD_INIT;
@@ -81,7 +92,14 @@ uint8_t LCD_write(uint8_t data){
   //  data=書き込むデータ
   //  戻り値：書き込んだバイト数(常に1)
   digitalWrite(LCD_RS_PIN, HIGH);
+  #ifdef LCD_SS_PIN
+    digitalWrite(LCD_SS_PIN, LOW);
+  #endif
   SPI_transfer(data);
+  #ifdef LCD_SS_PIN
+    digitalWrite(LCD_SS_PIN, HIGH);
+  #endif
+
   delayMicroseconds(LCD_WAIT);
   return 1;
 }
@@ -152,7 +170,13 @@ void LCD_sendCmd(uint8_t cmd){
   // コマンド送信
   //  data=送信するコマンド
   digitalWrite(LCD_RS_PIN, LOW);
+  #ifdef LCD_SS_PIN
+    digitalWrite(LCD_SS_PIN, LOW);
+  #endif
   SPI_transfer(cmd);
+  #ifdef LCD_SS_PIN
+    digitalWrite(LCD_SS_PIN, HIGH);
+  #endif
   delayMicroseconds(LCD_WAIT);
 }
 
@@ -179,7 +203,7 @@ uint8_t __LCD_calcDdramAddr(uint8_t x, uint8_t y) {
   #if LCD_LINES<3
     // 通常の1-2行LCD
     return (y<<6)+x;
-  #elif defined(ST7036) && LCD_LINES==3
+  #elif defined(LCD_7036) && LCD_LINES==3
     // ST7036の3行モード
     return (y<<4)+x;
   #else

@@ -1,4 +1,4 @@
-// SPI_LCD ライブラリ version 0.10
+// SPI_LCD ライブラリ version 0.20
 //    2025.3.23 Programmed by Kyoro
 #ifndef SPI_LCD_h
 #define SPI_LCD_h
@@ -9,11 +9,12 @@
 #endif
 
 // LCD待ち時間設定
-#define LCD_WAIT 75     // LCDの待ち時間(us)
+#define LCD_WAIT 100    // LCDの待ち時間(us)
 #define LCD_WAITRH 2    // LCDの待ち時間(ms,クリア時)
 #define LCD_PWDLY 40    // LCDの待ち時間(ms,リセット時)
 #define LCD_RSTPW 100   // LCDリセット信号のパルス幅(us)
-#define LCD_IWAIT 200   // LCD初期設定中の待ち時間(ms)
+#define LCD_IWAIT 200   // LCD初期設定中の待ち時間(ms):初期化コマンド列で指定するもの
+#define LCD_FSWAIT 4    // LCD初期設定中の待ち時間(ms):初回FS実行後の待ち時間(パラレルLCD用)
 
 // LCDC初期化パラメータ
 #define __LCD_CONH ((LCD_CONT>>4) & 0b11)   // Contrast(H)
