@@ -1,10 +1,11 @@
 # CH55xduino_SPILCD
 SPI LCD Library for CH55xduino (Supports ST7032/ST7036).
+
 Most functions are similar to the "LiquidCrysatal" library.
 # How to install
 Create a new folder(e.g. "SPI_LCD_CH55x"), and place SPI_LCD.c, SPI_LCD.h, SPI_LCD_init.h, SPI_LCD_init_d.h into the folder.
 Edit SPI_LCD_init.h for initial settings.
-# Symbolic constants defined in SPI_LCD_settings.h
+# Symbolic constants defined in SPI_LCD_init.h
 LCD_USEPRINT : Define this if you want to use LCD_Print(), LCD_Printi(), LCD_Printb() functions. It requires about 1.3KB of memories.
 LCD_RS_PIN : GPIO number for R/S signal.
 LCD_RST_PIN : GPIO number for LCD reset signal.
